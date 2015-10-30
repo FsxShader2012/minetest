@@ -6,7 +6,7 @@ minetest.register_craftitem("poptarts:poptart", {
 	description = "PopTart",
 	inventory_image = "poptart.png",
 	on_use = function(itemstack, user, pointed_thing)
-		hp_change = 10
+		hp_change = 5
 		replace_with_item = nil
 		
 		minetest.chat_send_player (user:get_player_name(), "You ate an PopTart")

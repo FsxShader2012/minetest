@@ -1,7 +1,7 @@
---PopTart Food Test Mod ----------- Copyright Robin Kuhn 2015
+-- PopTart Food Test Mod ----------- Copyright Robin Kuhn 2015
 
 
---Define PopTart item as food
+-- Define PopTart item as food
 minetest.register_craftitem("poptarts:poptart", {
 	description = "PopTart",
 	inventory_image = "poptart.png",
@@ -25,4 +25,30 @@ minetest.register_craftitem("poptarts:poptart", {
 
         return itemstack
     end
+})
+
+
+-- Define sugar item
+minetest.register_craftitem("poptarts:sugar",{
+	description = "Sugar",
+	inventory_image = "sugar.png"
+})
+
+
+-- Define sugar crafting recipe
+minetest.register_craft({
+	type = "shapeless",
+	output = '"poptarts:sugar" 3',
+	recipe = {"default:papyrus"}
+})
+
+
+-- Define PopTart crafting recipe
+minetest.register_craft({
+	output = "poptarts:poptart",
+	recipe = {
+		{"farming:wheat", "farming:wheat", "farming:wheat", ""},
+		{"farming:flour", "poptarts:sugar", "farming:flour", ""},
+		{"farming:wheat", "farming:wheat", "farming:wheat", ""}
+	}
 })

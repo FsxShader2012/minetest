@@ -138,3 +138,16 @@ minetest.register_craft({
 		{"", "default:stick", "", ""}
 	}
 })
+
+
+--Make Rainbow Ore spawn
+minetest.register_ore({
+	ore_type = "scatter",
+	ore = "rainbow_ore:rainbow_ore_block",
+	wherein = "default:stone",
+	clust_scarcity = 17*17*17,
+	clust_num_ores = 4,
+	clust_size = 3,
+	height_min = -31000,
+	height_max = -100,
+})
